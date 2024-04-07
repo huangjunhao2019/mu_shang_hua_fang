@@ -4,6 +4,10 @@
 
 //如果用户传入了对象作为产生用户
 //在形参位置通过结构的方式获取用户传入的参数，同时设置默认值
+/**
+ * @description 消息提示框
+ * @param {Object} options
+ */
 const toast = ({ title = '数据加载中...', icon = 'none', duration = 2000, mask = true} = {}) => {
     wx.showToast({
       title,
@@ -16,6 +20,10 @@ const toast = ({ title = '数据加载中...', icon = 'none', duration = 2000, m
 //在调用modal方法时，可以传递参数，也可以不传递参数
 //如果不传递参数，默认值就是空对象
 //如果传递参数，参数需要是一个对象，对象中的属性需要和wx.showModal参数保持一致
+/**
+ * @description 模块对话框
+ * @param { object } options 参数和 wx.showModal 参数保持一致
+ */
 const modal = (options = {}) => {
     //在方法内部需要通过Promise返回用户的操作
     //如果用户点击了确定，需要通过resolve返回true
