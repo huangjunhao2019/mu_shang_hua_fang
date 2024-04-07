@@ -1,14 +1,22 @@
 // import { toast } from './utils/extendApi'
 import './utils/extendApi'
-import { setStorage, getStorage, removeStorage, clearStorage} from './utils/storage'
+import { asyncSetStorage, asyncGetStorage, asyncRemoveStorage, asyncClearStorage} from './utils/storage'
 App({
     async onShow() {
-        setStorage('name', 'tom')
-        setStorage('age', 10)
-        // const name = getStorage('name')
-        // console.log(name)
-        //removeStorage('name')
-
-        clearStorage()
+        asyncSetStorage('name', 'Jerry').then(res => {
+            console.log(res)
+        })
+        asyncSetStorage('age', 100).then(res => {
+            console.log(res)
+        })
+        // asyncGetStorage('name').then((res)=> {
+        //     console.log(res.data)
+        // })
+        // asyncRemoveStorage('name').then((res)=>{
+        //     console.log(res)
+        // })
+        asyncClearStorage().then(res => {
+            console.log(res)
+        })
     }
 })

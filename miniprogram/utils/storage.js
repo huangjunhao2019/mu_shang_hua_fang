@@ -47,3 +47,66 @@ export const clearStorage = () => {
         console.error('清空本地数据发生了异常', error)
     }
 }
+/**
+ * @description 异步将数据存储到本地
+ * @param {*} key 本地缓存中指定的key
+ * @param {*} data 需要缓存的数据
+ */
+export const asyncSetStorage = (key, data) => {
+    return new Promise((resolve) =>{
+        wx.setStorage({
+            key,
+            data,
+            complete(res){
+                resolve(res)
+            }
+        })
+    })
+}
+/**
+ * @description 异步从本地获取指定key的数据
+ * @param {*} key 
+ */
+export const asyncGetStorage = (key) => {
+    return new Promise((resolve) => {
+        wx.getStorage({
+            key, 
+            complete(res){
+                resolve(res)
+            }
+        })
+
+    })
+}
+
+/**
+ * @description 异步从本地移除指定key的数据
+ * @param {*} key 
+ */
+export const asyncRemoveStorage = (key) => {
+    return new Promise((resolve) => {
+        wx.removeStorage({
+            key, 
+            complete(res){
+                resolve(res)
+            }
+        })
+
+    })
+}
+
+
+/**
+ * @description 异步从本地移除所有数据
+ * @param {*} key 
+ */
+export const asyncClearStorage = () => {
+    return new Promise((resolve) => {
+        wx.clearStorage({
+            complete(res){
+                resolve(res)
+            }
+        })
+
+    })
+}
