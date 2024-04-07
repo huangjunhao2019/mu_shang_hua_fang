@@ -1,0 +1,15 @@
+{
+  "name": "miniprogram-3",
+  "version": "1.0.0",
+  "description": "来自尚硅谷的慕尚花坊小程序",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.11.4"
+  }
+}
